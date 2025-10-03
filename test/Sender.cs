@@ -41,5 +41,6 @@ public class Sender : OpenTKWindow, IDisposable
     public new void Dispose()
     {
         base.Dispose();
+        NDISenderManager.Dispose();
     }
 }

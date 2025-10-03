@@ -62,4 +62,13 @@ internal static class NDISenderManager
             NDIlib.send_send_video_v2(Sender, ref VideoFrameData);
         }
     }
+
+    internal static void Dispose()
+    {
+        if (Sender != nint.Zero)
+        {
+            NDIlib.send_destroy(Sender);
+            Sender = nint.Zero;
+        }
+    }
 }
