@@ -7,12 +7,14 @@ namespace test;
 public class Receiver : OpenTKWindow, IDisposable
 {
     private string name;
+    private string groups;
     private int textureID = -1;
 
-    public Receiver(EyeCandyWindowConfig windowConfig, string deviceName)
+    public Receiver(EyeCandyWindowConfig windowConfig, string deviceName, string groupName)
         : base(windowConfig, "passthrough.vert", "receiver.frag")
     {
         name = deviceName;
+        groups = groupName;
         OpenGLUtils.SetTextureUniformCallback = SetTextureUniformCallback;
     }
 

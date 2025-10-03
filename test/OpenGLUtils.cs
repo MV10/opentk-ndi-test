@@ -36,6 +36,8 @@ internal static class OpenGLUtils
     internal static int Width;
     internal static int Height;
 
+    internal static byte[] VideoFrame;
+
     internal static void Initialize(Shader shader)
     {
         VertexArrayObject = GL.GenVertexArray();
@@ -76,6 +78,17 @@ internal static class OpenGLUtils
     {
         GL.BindVertexArray(VertexArrayObject);
         GL.DrawElements(PrimitiveType.Triangles, Indices.Length, DrawElementsType.UnsignedInt, 0);
+    }
+
+    internal unsafe static void ReadFramebufferPixels(int width, int height)
+    {
+        var bufferSize = width * 4 * height;
+        if(VideoFrame is null || VideoFrame.Length != bufferSize) VideoFrame = new byte[bufferSize];
+        fixed (byte* pb = VideoFrame)
+        {
+            var ptr = (IntPtr)pb;
+            GL.ReadPixels(0, 0, width, height, PixelFormat.Rgba, PixelType.UnsignedByte, ptr);
+        }
     }
 
     internal static void Allocate()
