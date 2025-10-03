@@ -3,7 +3,7 @@
 
 Wires up the basics of [NDI](https://ndi.video/) send / receive of OpenGL textures.
 
-The project accepts a `sender` or `receiver` command line argument to run either mode. An optional second argument specifies the device name. If not provided, the default name is "test". If your name contains spaces, wrap it in quotes.
+The project accepts a `sender` or `receiver` command line argument to run either mode. An optional second argument specifies the device name. If not provided, the default name is "test". If your name contains spaces, wrap it in quotes. If a name is provided, an optional third argument can specify a comma-delimited list of NDI group names (in quotes if there are spaces).
 
 > NOTE: Only the sender mode is working, receiver mode is a work in progress.
 
