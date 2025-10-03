@@ -13,3 +13,4 @@ Uses Elias Puurunen's [NdiLibDotNetCoreBase](https://github.com/eliaspuurunen/Nd
 
 Note that my [eyecandy](https://github.com/MV10/eyecandy) library is used as a convenience. It provides some basic functionality from the [OpenTK](https://github.com/opentk/opentk) windowing support, shader compilation, and uniform handling, but it's entirely incidental to the NDI processing. OpenTK itself is a thin wrapper around OpenGL and GLFW windowing APIs.
 
+<img width="991" height="1284" alt="image" src="https://github.com/user-attachments/assets/6ea25d59-3331-4f9e-83a9-6f0065edd982" />
