@@ -32,6 +32,12 @@ public class Sender : OpenTKWindow, IDisposable
         NDISenderManager.SendVideoFrame(ref OpenGLUtils.VideoFrame);
     }
 
+    protected override void OnResize(ResizeEventArgs e)
+    {
+        base.OnResize(e);
+        NDISenderManager.PrepareVideoFrame(ClientSize.X, ClientSize.Y);
+    }
+
     public new void Dispose()
     {
         base.Dispose();
